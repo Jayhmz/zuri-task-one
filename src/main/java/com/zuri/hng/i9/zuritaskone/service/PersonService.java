@@ -10,7 +10,7 @@ public class PersonService {
 
 	public ResponseAPI personDetails() {
 		
-		PersonDTO personDTO = new PersonDTO("Jayhmz", "Backend Engineer and Tech Educator", false, 26);
+		PersonDTO personDTO = new PersonDTO("iola", "Backend Engineer and Tech Educator", false, 26);
 				
 		return new ResponseAPI(personDTO.getUsername(), true, personDTO.getAge(), personDTO.getBio());
 		
