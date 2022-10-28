@@ -8,13 +8,10 @@ import com.zuri.hng.i9.zuritaskone.model.PersonDTO;
 @Service
 public class PersonService {
 
-	public ResponseAPI personDetails(PersonDTO personDTO) {
+	public ResponseAPI personDetails() {
 		
-		if(personDTO == null) {	
-			System.out.println("null value");
-			throw new RuntimeException("person object is null");
-		}
-		
+		PersonDTO personDTO = new PersonDTO("Jayhmz", "Backend Engineer and Tech Educator", false, 26);
+				
 		return new ResponseAPI(personDTO.getUsername(), true, personDTO.getAge(), personDTO.getBio());
 		
 	}

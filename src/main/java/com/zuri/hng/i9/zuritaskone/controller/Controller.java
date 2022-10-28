@@ -24,9 +24,9 @@ public class Controller {
 
 	@GetMapping("/info")
 	@ResponseBody
-	public ResponseEntity<ResponseAPI> getDetails(@RequestBody PersonDTO dto){
+	public ResponseEntity<ResponseAPI> getDetails(){
 		
-		ResponseAPI personDetails = service.personDetails(dto);
+		ResponseAPI personDetails = service.personDetails();
 		
 		if(personDetails == null) {
 			return new ResponseEntity<ResponseAPI>(personDetails, HttpStatus.BAD_REQUEST);

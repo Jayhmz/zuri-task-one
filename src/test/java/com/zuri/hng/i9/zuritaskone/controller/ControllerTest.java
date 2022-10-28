@@ -25,30 +25,22 @@ class ControllerTest {
 
 	@Test
 	void actualResponseTest() {
-		PersonDTO dto = new PersonDTO();
-		dto.setAge(10);
-		dto.setBackend(true);
-		dto.setUsername("James");
-		dto.setBio("somethinng hereee");
+		PersonDTO dto = new PersonDTO("Jayhmz", "Backend Engineer and Tech Educator", false, 26);
 		
-		ResponseEntity<ResponseAPI> details = controller.getDetails(dto);
+		ResponseEntity<ResponseAPI> details = controller.getDetails();
 		
 		assertNotNull(details);
 	}
 	
 	@Test
 	void nullResponseTest() {
-		PersonDTO dto = new PersonDTO();
-		dto.setAge(10);
-		dto.setBackend(true);
-		dto.setUsername("James");
-		dto.setBio("somethinng hereee");
+		PersonDTO dto = new PersonDTO("Jayhmz", "Backend Engineer and Tech Educator", false, 26);
 		
-		when(service.personDetails(dto)).thenReturn(null);
+		when(service.personDetails()).thenReturn(null);
 		
-		ResponseEntity<ResponseAPI> details = controller.getDetails(dto);
+		ResponseEntity<ResponseAPI> details = controller.getDetails();
 		
-		assertThrows(RuntimeException.class, () -> service.personDetails(dto));
+		assertThrows(RuntimeException.class, () -> service.personDetails());
 		
 		
 	}
