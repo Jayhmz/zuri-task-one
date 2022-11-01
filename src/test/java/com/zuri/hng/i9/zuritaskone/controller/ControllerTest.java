@@ -35,13 +35,10 @@ class ControllerTest {
 	@Test
 	void nullResponseTest() {
 		PersonDTO dto = new PersonDTO("Jayhmz", "Backend Engineer and Tech Educator", false, 26);
-		
+		 
 		when(service.personDetails()).thenReturn(null);
-		
-		ResponseEntity<ResponseAPI> details = controller.getDetails();
-		
-		assertThrows(RuntimeException.class, () -> service.personDetails());
-		
+			
+		assertNull(service.personDetails());
 		
 	}
 
