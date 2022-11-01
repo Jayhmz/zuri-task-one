@@ -15,14 +15,13 @@ import com.zuri.hng.i9.zuritaskone.model.PersonDTO;
 import com.zuri.hng.i9.zuritaskone.service.PersonService;
 
 @RestController
-@RequestMapping("/api/v1/")
 @CrossOrigin("*")
 public class Controller {
 	
 	@Autowired
 	private PersonService service;
 
-	@GetMapping("/info")
+	@GetMapping("/")
 	@ResponseBody
 	public ResponseEntity<ResponseAPI> getDetails(){
 		
